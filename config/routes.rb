@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-    root to: "gardens#index"
-  resources :gardens, only: [:index, :show] do
+    root to: "gardens#home"
+  resources :gardens do
     resources :plants, only: [:create]
   end
+  resources :plants, only: :destroy
 end
