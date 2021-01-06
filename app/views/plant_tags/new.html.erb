@@ -1,0 +1,7 @@
+<h1>add to <%= @plant.name %></h1>
+
+<%= simple_form_for([@plant, @plant_tag]) do |f| %>
+    <%= f.association :tag , input_html: {multiple: true, include_hidden: false}%>
+    <%#= f.input :tag_id, as: :select, collection: Tag.alls %>
+    <%= f.submit 'add your tag', class: 'btn btn-primary' %>
+<% end %>
